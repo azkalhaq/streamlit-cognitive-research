@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 import os
 
-openai.api_key = st.secrets["openai"]["api_key"]
+openai.api_key = st.secrets["OpenAI_key"]
 
 
 st.set_page_config(
