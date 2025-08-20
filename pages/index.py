@@ -2,11 +2,11 @@ import streamlit as st
 import openai
 import os
 
-openai.api_key = st.secrets["OpenAI_key"]
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 
 st.set_page_config(
-    page_title="Chat GPT-4o",
+    page_title="Chat GPT",
     page_icon="🤖",
     layout="centered"
 )
@@ -25,7 +25,7 @@ if prompt:
     })
 
     assistant = openai.chat.completions.create(
-        model="gpt-5",
+        model=st.secrets["OPENAI_MODEL"],
         messages=[
             { "role" : "system","content":"You are an AI agent"},
             *st.session_state.chats,
