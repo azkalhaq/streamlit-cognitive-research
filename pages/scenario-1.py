@@ -11,6 +11,15 @@ st.set_page_config(
     layout="centered"
 )
 
+hide_streamlit_elements = """
+        <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+        </style>
+    """
+st.markdown(hide_streamlit_elements, unsafe_allow_html=True)
+
 st.title('How can I help?')
 
 if "chats" not in st.session_state:
